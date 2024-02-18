@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/blog', function () {
     // consulta a la base de datos
@@ -15,11 +15,11 @@ Route::get('/blog', function () {
     ];
 
     return view('blog', ['posts' => $posts]);
-});
+})->name('blog');
 
 Route::get('/blog/{word}', function ($word) {
     // consulta a la base de datos
     $post = $word;
     return view('post', ['post' => $post]);
-});
+})->name('post');
 
